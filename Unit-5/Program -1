@@ -1,1 +1,35 @@
+Experiment 1: Pointer to an Integer Variable
+Aim: To declare a pointer, initialize it with the address of an integer variable, and display the value and address using both the variable and the pointer.
+Program
+#include <stdio.h>
 
+int main()
+{
+    int a = 10;
+    int *p;
+
+    p = &a;
+
+    printf("Value of a = %d\n", a);
+    printf("Address of a = %p\n", (void *)&a);
+
+    printf("Value using pointer = %d\n", *p);
+    printf("Address using pointer = %p\n", (void *)p);
+
+    return 0;
+}
+
+Output
+Value of a = 10
+Address of a = 0x7ffe1234
+Value using pointer = 10
+Address using pointer = 0x7ffe1234
+
+Note: The address shown above is an example. The actual address may differ when you run the program.
+
+Explanation:
+- int a = 10; declares an integer variable.
+- int *p; declares a pointer to an integer.
+- p = &a; stores the address of a in pointer p.
+- *p accesses the value stored at that address.
+- &a gives the address of variable a.
