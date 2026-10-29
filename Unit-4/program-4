@@ -1,1 +1,35 @@
+Experiment 4: Find String Length and Reverse Without Built-in Functions
+Aim: To accept a string and find its length and reverse it without using built-in string functions.
+#include <stdio.h>
 
+int main()
+{
+    char str[100];
+    int i, length = 0;
+
+    printf("Enter a string: ");
+    scanf(" %99[^\n]", str);
+
+    while (str[length] != '\0')
+    {
+        length++;
+    }
+
+    printf("Length of string: %d\n", length);
+
+    printf("Reverse of string: ");
+
+    for (i = length - 1; i >= 0; i--)
+    {
+        printf("%c", str[i]);
+    }
+
+    printf("\n");
+
+    return 0;
+}
+
+Output:
+Enter a string: Hello World
+Length of string: 11
+Reverse of string: dlroW olleH
