@@ -1,1 +1,37 @@
+Experiment 2: Union and Shared Memory
+Aim: To define a union containing an integer, a float, and a character and demonstrate how memory is shared among its members.
+#include <stdio.h>
 
+union Data
+{
+    int i;
+    float f;
+    char c;
+};
+
+int main()
+{
+    union Data d;
+
+    printf("Size of union: %zu bytes\n", sizeof(d));
+
+    d.i = 10;
+    printf("Integer value: %d\n", d.i);
+
+    d.f = 25.5;
+    printf("Float value: %.2f\n", d.f);
+
+    d.c = 'A';
+    printf("Character value: %c\n", d.c);
+
+    printf("All members share the same memory.\n");
+
+    return 0;
+}
+
+Output:
+Size of union: 4 bytes
+Integer value: 10
+Float value: 25.50
+Character value: A
+All members share the same memory.
