@@ -1,1 +1,46 @@
+Experiment 1: Structure to Store Student Details
+Aim: To store a student's roll number, name, and marks in three subjects using a structure and calculate total and average marks.
+#include <stdio.h>
 
+struct Student
+{
+    int roll;
+    char name[50];
+    float m1, m2, m3, total, average;
+};
+
+int main()
+{
+    struct Student s;
+
+    printf("Enter roll number: ");
+    scanf("%d", &s.roll);
+
+    printf("Enter name: ");
+    scanf(" %49[^\n]", s.name);
+
+    printf("Enter marks in three subjects: ");
+    scanf("%f %f %f", &s.m1, &s.m2, &s.m3);
+
+    s.total = s.m1 + s.m2 + s.m3;
+    s.average = s.total / 3;
+
+    printf("\n--- Student Details ---\n");
+    printf("Roll Number: %d\n", s.roll);
+    printf("Name: %s\n", s.name);
+    printf("Total Marks: %.2f\n", s.total);
+    printf("Average Marks: %.2f\n", s.average);
+
+    return 0;
+}
+
+Output:
+Enter roll number: 16
+Enter name: Rahul
+Enter marks in three subjects: 80 75 85
+
+--- Student Details ---
+Roll Number: 16
+Name: Rahul
+Total Marks: 240.00
+Average Marks: 80.00
